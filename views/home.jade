@@ -1,0 +1,16 @@
+extends layout
+
+block scripts
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/scores.js')
+    script(src='/js/index.js')
+    
+block content
+    div.playContainer
+      button.btn.btn-default#playButton Play Now!
+    div#topScores
+      div#allScores
+      div#personalScores
+
+  

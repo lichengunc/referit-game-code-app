@@ -1,0 +1,45 @@
+extends layout
+
+block scripts
+ script(src='/js/jquery.min.js')
+ script(src='/js/bootstrap.min.js')
+ script(src='socket.io/socket.io.js')   
+ script(src='/js/mturk1.js')
+
+block content
+  p#directions
+  h2#expression
+  #rightWrong
+  #timeBox
+    #timeHeader
+      p Time Elapsed
+    #timeDisplay
+  #imageContainer
+    img#mainImage
+  #dotContainer
+  form#turkForm(method='POST', action = 'http://workersandbox.mturk.com/mturk/externalSubmit', onsubmit='return mTurkUser();')
+    input#assignmentId(type='hidden', name='assignmentId', value='')
+    input#expressionInput(type='hidden', name='expressionInput', value='')
+    input#imageDetailsInput(type='hidden', name='imageDetailsInput', value='')
+    input#imageNumberInput(type='hidden', name='imageNumberInput', value='')
+    input#workerId(type='hidden', name='workerId', value='')
+    #textContainer
+      #container
+        input#textBox(type='text')
+  div#toPopup
+    div.close
+    span.ecs_tooltip
+      Press Esc to close
+    div#popup_content
+      p Instructions:
+        | Once you accept this HIT, you will be shown an image with an bounded object outlined by red.
+        | Your task is to write a phrase to describe that object. Another player will later
+        | be shown the same image (without the red outline) and your phrase and will try to select the object based on 
+        |the phrase you wrote, so make it as descriptive as possible.
+        
+        |Hit the ENTER or RETURN key to submit your phrase.
+        
+        |Happy playing!
+  div.loader
+  div#backgroundPopup
+  div#userName

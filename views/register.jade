@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.userContainer
+    h2
+     span.user
+      p Register
+
+    form(action="/register",method="post")
+      div.loginItem
+        input(type="text",name="username", placeholder="Username")
+      div.loginItem
+        input(type="password",name="password", placeholder="Password")
+      div.userButton.loginItem
+        input.btn.btn-default(type="submit",value="Register", width="220px")
+
+   

@@ -1,0 +1,47 @@
+extends layout
+
+block scripts
+ script(src='/js/jquery.min.js')
+ script(src='/js/bootstrap.min.js')
+ script(src='socket.io/socket.io.js')   
+ script(src='/js/game.js')
+
+block content
+  #gameContainer
+    #progressBar
+      #progressBarInner
+    #progressBarText
+      p <b><span id='first'><span id='gamesPlayed'></span> Games Played</span> <span id='second'>Goal: 50,000</span></b>
+    h2#expression
+    #rightWrong
+    #timeBox
+      #timeHeader
+        p Correct Rounds Remaining
+      #timeDisplay
+        p 5
+    #scoreBox
+      #scoreHeader
+        p Score
+      #scoreDisplay
+    #imageContainer
+      img#mainImage
+    #dotContainer
+    form#turkForm(method='POST', action = 'https://www.mturk.com/mturk/externalSubmit')
+      input#assignmentId(type='hidden', name='assignmentId', value='TBD')
+      input#expressionInput(type='hidden', name='expressionInput', value='Hello there')
+    #textContainer
+      input#textBox(type='text', onkeydown='if (event.keyCode == 13) enterText();')
+    #textMessage
+    #submitContainerButton.containerButton
+      button#submitButton.customButton(name='Submit', value='Submit') Submit
+    #fade.overlay
+      .whiteContent
+        .topBorder
+          p HOW TO PLAY
+        .text
+          p
+            | Welcome to <span class='branding'>ReferIt Game</span>! In moments you and another player will both be shown the same picture. If you see an item outlined, then your goal is to describe the object as best as possible (ex: "The person wearing the hat", "The cat inside the hat"). If you are the other player, then your goal is to select the object that the first player describes. <br><br><span style="color:#cc0000;font-weight:bold">IMPORTANT:</span> You are not allowed to use location in the description, certain words are in fact <span style="color:#cc0000;font-weight:bold">not</span> allowed by the game (<span style="color:#cc0000">left, right, center, bottom, top, leftmost, rightmost, first, second</span>). <br/><br/>You both earn points and swap roles if the second player selects the correct object. The faster you play, the more points you win. Check out the <a href='/home'>highscore board</a> for top players and the <a href='/faq'>FAQ</a> tab to learn why we created this game.
+        div.containerButton
+          input#tutorialButton.customButton(type='button', name='Start', value='Start')
+
+  

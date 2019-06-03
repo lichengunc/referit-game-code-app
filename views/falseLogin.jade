@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    div.userContainer
+      h2 
+        span.user 
+          p Log In
+      p.centerText.smaller The username and/or password you entered was invalid. 
+      h2
+        form#loginForm(action="/login",method="post")
+           div.loginItem
+             input(type="text",name="username", placeholder="Username")
+           div.loginItem
+              input(type="password",name="password", placeholder="Password")  
+           div#loginButton.loginItem
+              input.btn.btn-default(type="submit",value="Log In", width="220px")
+         div#directPlayButton.loginItem
+              input.btn.btn-default(type="submit",value="Play Without Logging In", width="220px")
+
+    
+      p.centerText
+          | Don't have an account yet? Register <a href="/register"><strong><u>here.</u></strong></a><br>
+          
+  

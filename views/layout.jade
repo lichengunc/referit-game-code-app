@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    title ReferIt Game
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/index.css')
+    link(rel='stylesheet', href='/css/glyphicons.css')
+    block scripts
+      script(src='/js/jquery.min.js')
+      script(src='/js/bootstrap.js')
+      script(src='/js/bootstrap.min.js')
+      script(src='/js/index.js')
+
+
+  body
+    div#fb-root
+    script(type='text/javascript').
+      - function(d, s, id) {
+        var js,fjs = d.getElementsByTagName(s)[0];
+        if(d.getElementById(id)) return;
+        js = d.createElement(s); js.id = 134211230115355;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=134211230115355";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk');
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand(href="/") ReferIt Game
+          ul.nav
+            if(loc != 'play')
+              li
+                a(href='/play') PLAY
+            li
+              a(href="/faq") FAQ
+            li
+              a(href='/home') HIGH SCORES
+            if (typeof(user) != 'undefined')
+              li
+                a(href="/logout") LOG OUT
+            if(typeof(user) == 'undefined')
+              li
+                a(href="/") LOG IN
+            if(loc == 'play')
+              li#quitNow
+                a(href="/home") QUIT
+          img(id='logo', src="/img/logo.png", alt="unclogo")
+    div#username
+      if(user)
+        p #{user.username}
+      else
+        p anonymous
+    #fbContainer
+        div.fb-like(data-href='http://www.referitgame.com/play', data-layout='standard', data-action='like', data-show-faces='false', data-share='true')
+    .container
+      input#currentUrl(type='hidden', value='')
+      block content
+    .customFooter
+      .customFooter-nav
+        ul#footerItems
+          li
+            a(href='/faq') FAQ
+          li
+            a(href='mailto:referitgame@gmail.com') Contact Us
+          li
+            a(href='/')© ReferIt Game
+
+    
+ 

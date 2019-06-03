@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  if (user)
+    h2
+      p Welcome, #{user.username} to Referit (COCO)!
+    div.playContainer
+      button.btn.btn-default#playButton Play Now!
+    div#topScores
+      div.loggedInScores#allScores
+      div.loggedInScores#personalScores
+  else
+    div.userContainer
+        h2 
+          span.user 
+            p Log In
+        form#loginForm(action="/login",method="post")
+           div.loginItem
+             input(class="userInfo",type="text",name="username", placeholder="Username")
+           div.loginItem
+              input(class="userInfo", type="password",name="password", placeholder="Password")  
+           div#loginButton.loginItem
+              input.btn.btn-default(type="submit",value="Log In", width="220px")
+         div#directPlayButton.loginItem
+              input.btn.btn-default(type="submit",value="Play Without Logging In", width="220px")
+    
+      p.centerText
+          | Don't have an account yet? Register <a href="/register"><strong><u>here.</u></strong></a> to Referit 2019<br>
+  
