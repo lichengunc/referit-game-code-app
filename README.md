@@ -2,6 +2,7 @@
 
 ### Pre-requisites
 * ubuntu: 16.04
+* mongo: 4.0.9
 * node: 10.16.0
 * npm: 6.9.0
 
