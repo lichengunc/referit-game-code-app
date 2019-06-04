@@ -346,17 +346,16 @@ io.on('connection', function(socket) {
         logger.info(index + ' ' + totalIndex);
 		pngparse.parseFile(pngName, function(err, pixels) {
             if(err) logger.error(err);
-
-            var num_zeros = 0, num_ones = 0;
-            for (var i = 0; i < pixels.data.length; i++){
-                if (pixels.data[i] == 0) {
-                    num_zeros += 1;
-                }else{
-                    num_ones += 1;
-                }
-            }
-            console.log('num_zeros: ', num_zeros, 'num_ones: ', num_ones);
-
+            // Check png image
+            // var num_zeros = 0, num_ones = 0;
+            // for (var i = 0; i < pixels.data.length; i++){
+            //     if (pixels.data[i] == 0) {
+            //         num_zeros += 1;
+            //     }else{
+            //         num_ones += 1;
+            //     }
+            // }
+            // console.log('num_zeros: ', num_zeros, 'num_ones: ', num_ones);
 			// logger.info('About to send next image response to ' + data.socketId);
 			io.sockets.sockets[data.socketId].emit('nextImageResponse', {imageNumber: imageNumber, totalIndex: totalIndex, pixels: pixels.data});
 		});		
