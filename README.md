@@ -1,5 +1,9 @@
 # referit-game-code-app
 
+<p align="center">
+  <img src="public/img/loadScreen.jpg" width="70%"/>
+</p>
+
 ### Pre-requisites
 * ubuntu: 16.04
 * mongo: 4.0.9
