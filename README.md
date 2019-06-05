@@ -1,7 +1,7 @@
 # referit-game-code-app
 
-<p align="center">
-  <img src="public/img/loadScreen.jpg" width="40%"/>
+<p align="left">
+  <img src="public/img/loadScreen.jpg" width="35%"/>
 </p>
 
 ### Pre-requisites
