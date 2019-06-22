@@ -19,3 +19,9 @@
 ### Function
 * This games supports two modes: player-and-AI and player-and-player. 
 * MTurk collection (TODO)
+
+
+### How to run
+* shut down firewall
+* start Mongodb: ```sudo service mongod start'''
+* run node: ```node server.js'''
