@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-session": "^1.16.1",
     "fs": "0.0.1-security",
     "hashmap": "^2.3.0",
